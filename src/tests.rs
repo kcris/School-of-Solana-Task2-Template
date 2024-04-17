@@ -337,14 +337,11 @@ mod test {
                 let circumference = circle.circumference(); // an error here will disappear once you implement the Shape trait for Circle
                 let area = circle.area(); // an error here will disappear once you implement the Shape trait for Circle
 
-                let reference_circ = format!("{:.5}", circumference!(r_in));
-                let reference_area = format!("{:.5}", area!(r_in));
+                let reference_circ = circumference!(r_in);
+                let reference_area = area!(r_in);
 
-                let computed_circ = format!("{:.5}", circumference);
-                let computed_area = format!("{:.5}", area);
-
-                assert_eq!(computed_circ, reference_circ);
-                assert_eq!(computed_area, reference_area);
+                assert_eq!(circumference, reference_circ);
+                assert_eq!(area, reference_area);
             }
 
             if a_in < 0.0 || b_in < 0.0 {
@@ -354,14 +351,11 @@ mod test {
                 let circumference = rectangle.circumference();
                 let area = rectangle.area();
 
-                let reference_circ = format!("{:.5}", circumference!(a_in, b_in));
-                let reference_area = format!("{:.5}", area!(a_in, b_in));
+                let reference_circ = circumference!(a_in, b_in);
+                let reference_area = area!(a_in, b_in);
 
-                let computed_circ = format!("{:.5}", circumference);
-                let computed_area = format!("{:.5}", area);
-
-                assert_eq!(computed_circ, reference_circ);
-                assert_eq!(computed_area, reference_area);
+                assert_eq!(circumference, reference_circ);
+                assert_eq!(area, reference_area);
             }
         }
     }
